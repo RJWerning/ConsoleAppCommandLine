@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ConsoleAppCommandLine": {
+      "commandName": "Project",
+      "commandLineArgs": "--? --p  newPassword1 --s newSecret123"
+    }
+  }
+}
