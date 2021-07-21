@@ -2,6 +2,11 @@
 	Allows user to change settings in the appsettings.json via command line
 	This version is targeted specifically for Bullhorn RestAPI settings
 
+Handles updating the appsettings.json file using commandline params without including any 3p libraries
+
+Code for AppSettingsUpdater.cs comes from: https://stackoverflow.com/a/67917167
+
+
 ## Usage
 	commandline execute: 
 		
