@@ -4,10 +4,15 @@
 
 ## Notes
 	The Build is specifically targeted towards win64 exe	
-	Handles updating the appsettings.json file using commandline params without including any 3p libraries
-	Supports encryption of the settings value
+	Handles updating the appsettings.json file using commandline params without including any 3rd party libraries
+    - Opted to go this way over using something like McMaster CommandLineUtils 
+	Supports base64 encoding of the settings value
 	Single file publishing with access to appsettings.json back in original folder:
-		- this is an issue as singlefile extracts to a temp folder for win64, so appsettings.json typically isn't accessible from there
+		- this is an issue as singlefile extracts to a temp folder for win64 exe,
+      so appsettings.json typically isn't accessible from there
+  To get appsettings.json moved during Publish step, update the .csproj with the following:
+    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
 
 ## Usage
 	commandline execute:
@@ -28,3 +33,5 @@
 ## References
 	ExtensionMethods.cs > https://jasonwatmore.com/post/2020/09/12/c-encode-and-decode-base64-strings
 	AppSettingsUpdater.cs > https://stackoverflow.com/a/67917167
+  McMaster CommandLineUtils ? https://natemcmaster.github.io/CommandLineUtils/docs/intro.html
+  
